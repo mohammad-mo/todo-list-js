@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* variables */
+:root {
+    --primaryColor: #248277;
+    --secondaryColor: #ede9fe;
+    --mainWhite: #fff;
+    --mainRed: #db2777;
+    --bodyColor: linear-gradient(
+        to bottom right,
+        #45c270, #21CDC3
+    );
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: var(--bodyColor);
+    background-repeat: no-repeats;
+}
+
+header {
+    margin: 8rem 0;
+    color: var(--mainWhite);
+    /* display: flex;
+    align-items: center; */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-container {
+    width: 25rem;
+    background-color: var(--mainWhite);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.input-container input {
+    flex: 1;
+}
+
+.input-container .todo-input {
+    border: none;
+    outline: none;
+    background-color: var(--mainWhite);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-container .todo-button {
+    border: none;
+    outline: none;
+    background-color: var(--mainWhite);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0 5px 5px 0;
+    color: var(--mainWhite);
+    background-color: var(--primaryColor);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-container .todo-button:hover {
+    filter: brightness(120%);
+}
+
+.input-container .todo-button:focus {
+    outline: none;
+    filter: brightness(120%);
+}
+
+.todo-container {
+    width: 25rem;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0;
+    padding: 0.2rem;
+    transition: all .3s ease-in-out;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+}
+
+.todo li {
+    flex: 1;
+    color: var(--primaryColor);
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.todo span {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.fa-check-square {
+    color: var(--primaryColor);
+}
+
+.fa-trash-alt {
+    color: var(--mainRed);
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.select {
+    margin-left: 1rem;
+    background-color: var(--mainWhite);
+    cursor: pointer;
+    width: 10rem;
+    font-weight: bold;
+    position: relative;
+    border-radius: 5px;
+}
+
+select {
+    font-family: 'Poppins', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+    color: var(--primaryColor);
+    border-radius: inherit;
+}
+
+.select::after {
+    content: "\25bc";
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    padding: 1rem;
+    color: var(--primaryColor);
+    pointer-events: none;
+}
+
+@media screen and (max-width: 580px) {
+    header {
+        margin: 8rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .select {
+        margin-left: 0;
+        margin-top: 0.4rem;
+        width: 100%;
+    }
+
+    .todo-container {
+        margin-top: 0.5rem;
+    }
+
+    select {
+        padding: 0.7rem;
+    }
+
+    .select::after {
+        top: -7px;
+    }
+}
+
+@media screen and (max-width: 405px) {
+    .input-container,
+    .todo-container {
+        width: calc(100vw - 1rem);
+    }
+}
