@@ -172,7 +172,7 @@ select {
     pointer-events: none;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 670px) {
     header {
         margin: 8rem 0;
     }
@@ -201,9 +201,9 @@ select {
     }
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 460px) {
     .input-container,
     .todo-container {
-        width: calc(100vw - 1rem);
+        width: calc(100vw - 2rem);
     }
 }
