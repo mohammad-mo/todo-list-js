@@ -13,8 +13,8 @@ const markup = () =>
     {
         return `
             <li>${todoInput.value}</li>
-            <span><i class='far fa-trash-alt'></i></span>
-            <span><i class='far fa-check-square'></i></span>
+            <span class="trash"><i class='far fa-trash-alt'></i></span>
+            <span class="check"><i class='far fa-check-square'></i></span>
         `
     }
 }
@@ -33,18 +33,27 @@ const checkRemoveOrComplete = (e) =>
 {
     const classList = [...e.target.classList]
     const item = e.target
-    const parentEl = item.parentElement.parentElement
+    const iconParentEl = item.parentElement.parentElement
+    const spanParentEl = item.parentElement
 
     // console.log(classList)
     // console.log(item)
 
     if (classList[1] === 'fa-trash-alt')
     {
-        parentEl.remove()
+        iconParentEl.remove()
+    }
+    else if (classList[0] === 'trash')
+    {
+        spanParentEl.remove()
     }
     else if (classList[1] === 'fa-check-square')
     {
-        parentEl.classList.toggle('completed')
+        iconParentEl.classList.toggle('completed')
+    }
+    else if (classList[0] === 'check')
+    {
+        spanParentEl.classList.toggle('completed')
     }
 }
 
