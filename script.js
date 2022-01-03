@@ -96,4 +96,4 @@ todoInput.addEventListener('keyup', (event) =>
     }
 })
 todoList.addEventListener('click', checkRemoveOrComplete)
-filterOption.addEventListener('click', filterTodos)
+filterOption.addEventListener('change', filterTodos)
